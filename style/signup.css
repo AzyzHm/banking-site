@@ -1,19 +1,21 @@
 body {
-    font-family: Arial, sans-serif;
+    box-sizing: border-box;
     background-color: #f2f2f2;
+    font-size: clamp(0.8rem, 2vw, 1rem);
 }
 
 .container {
-    max-width: 400px;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: #fff;
+    max-width: 500px;
+    min-width: 200px;
+    margin: 2rem auto;
+    padding: 20px;;
     border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
 }
 
 h1 {
     text-align: center;
+    font-size: clamp(1.5rem, 5vw, 2rem);
     margin-bottom: 20px;
 }
 
@@ -22,26 +24,47 @@ label {
     margin-bottom: 10px;
 }
 
-input[type="text"],
-input[type="email"],
-input[type="password"] {
-    width: 100%;
+input {
+    width: 90%;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 3px;
     margin-bottom: 15px;
 }
-
+input:focus {
+    outline: none;
+    border-color: red;
+}
+.error {
+    color: red;
+    margin-left: 1rem;
+}
+.form-group{
+    margin-bottom: 10px;
+}
 button {
-    width: 100%;
+    width: 50%;
+    margin: 1rem auto 0 25%;
     padding: 10px;
-    background-color: #4CAF50;
     color: #fff;
     border: none;
-    border-radius: 3px;
+    border-radius: 5px;
     cursor: pointer;
 }
-
+button:first-of-type {
+    background-color: #4CAF50;
+}
+button:last-of-type {
+    background-color: #f44336;
+}
 button:hover {
-    background-color: #45a049;
+    opacity: 0.8;
+}
+p {
+    text-align: center;
+}
+a{
+    text-decoration: none;
+    color: blue;
+    font-weight: bolder;
 }
