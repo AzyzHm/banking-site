@@ -9,15 +9,101 @@
 </head>
 <body>
     <nav>
-        <div>
-            <ul>
-                <li><a href="#">Dashboard</a></li>
-                <li><a href="#">Deposit</a></li>
-                <li><a href="#">Transfer</a></li>
-                <li><a href="#">Withdraw</a></li>
-                <li><a href="#">About Us</a></li>
-            </ul>
-        </div>
+        <a id="dashboard">Dashboard</a>
+        <a id="deposit">Deposit</a>
+        <a id="transfer">Transfer</a>
+        <a id="withdraw">Withdraw</a>
+        <a id="about">About</a>
+        <a id="account">Account</a>
     </nav>
+    <main>
+        <section id="Dashboard">
+            <h2>Welcome <span id="username">guest</span></h2>
+            balance: <span id="balance">0</span> <br>
+            Last Transaction: <span id="lastTransaction">none</span>
+        </section>
+        <section id="Deposit">
+            <h3>Deposit</h3>
+            <form>
+                <div class="form-group">
+                    <label for="amount">Amount</label>
+                    <input type="number" id="amount" name="amount" required>
+                </div>
+                <div class="form-group
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <button type="submit">Deposit</button>
+            </form>
+        </section>
+        <section id="Transfer">
+            <h3>Transfer</h3>
+            <form>
+                <div class="form-group">
+                    <label for="account-number">account-number</label>
+                    <input type="text" id="account-number" name="account-number" required>
+                </div>
+                <div class="form-group>
+                    <label for="amount">Amount</label>
+                    <input type="number" id="amount" name="amount" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <button type="submit">Transfer</button>
+        </section>
+        <section id="Withdraw">
+            <h3>Withdraw</h3>
+            <form>
+                <div class="form-group
+                    <label for="amount">Amount</label>
+                    <input type="number" id="amount" name="amount" required>
+                </div>
+                <div class="form-group
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <button type="submit">Withdraw</button>
+        </section>
+        <section id="About">
+            <h3>who are we?</h3>
+            <p>we are a bank, we steal your money and invest it so we can get rich and you will get a small intrest rate that doesn't even cover the inflation rate.(dumb***) </p>
+        </section>
+        <section id="Account">
+            <h3>Your Personal Info</h3>
+            <form>
+                <div class="form-group>
+                    <label for="first-name">First Name</label>
+                    <input type="text" id="first-name" name="first-name">
+                </div>
+                <div class="form-group
+                    <label for="last-name">Last Name</label>
+                    <input type="text" id="last-name" name="last-name">
+                </div>
+                <div class="form-group
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email">
+                </div>
+                <div class="form-group">
+                    <label for="age">Age</label>
+                    <input type="number" id="age" name="age">
+                </div>
+                <div class="form-group">
+                    <label for="password">Address</label>
+                    <input type="address" id="address" name="address">
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Apply">
+                    <input type="reset" value="Reset">
+                </div>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <hr>
+        <p>Created by: <a href="../portfolio/index.php">Azyz</a></p>
+        <p>&copy; 2024</p>
+    </footer>
 </body>
 </html>
