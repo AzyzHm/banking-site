@@ -1,7 +1,7 @@
 :root {
-    --nav: rgba(20, 20, 20, 0.2);
-    --background: green;
-    --section: white;
+    --nav: rgba(20, 20, 20, 0.3);
+    --background: rgba(0, 128, 0);
+    --section: rgb(255, 255, 255, 0.8);
 }
 
 body {
@@ -15,6 +15,7 @@ nav {
     top: 0;
     left: 0;
     width: 100%;
+    min-width: 350px;
     display: flex;
     justify-content: center;
     background-color: var(--nav);
@@ -44,11 +45,14 @@ main {
 }
 
 section {
+    max-width: 60rem;
     margin-bottom: 2rem;
     background: var(--section);
     padding: 1rem;
     border-radius: 10px;
-    text-align: center;
+}
+#Deposit,#Withdraw,#Transfer,#Account{
+    display: none;
 }
 footer {
     background-color: inherit;
@@ -56,4 +60,63 @@ footer {
     text-align: center;
     margin: auto;
     padding: 2rem;
+}
+h3 {
+    font-size: clamp(1.5rem, 2vw, 2rem);
+    font-family: monospace;
+    text-align: center;
+}
+form{
+    max-width: 50rem;
+    margin: auto;
+}
+label {
+    display: block;
+    font-weight:lighter;
+}
+input {
+    width: 90%;
+    padding: 0.5rem;
+    margin: 0.5rem 0;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+input[type="submit"]{
+    width: 50%;
+    margin-left: 25%;
+    background: green;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+input[type="submit"]:hover {
+    opacity: 0.8;
+}
+input[type="submit"]:active {
+    opacity: 0.6;
+}
+button {
+    padding: 0.5rem 1rem;
+    margin: 0.5rem 0;
+    border: none;
+    border-radius: 5px;
+    background: green;
+    color: white;
+    cursor: pointer;
+    margin-left: 40%;
+}
+button:hover {
+    opacity: 0.8;
+}
+button:active {
+    opacity: 0.6;
+}
+p {
+    font-size: clamp(1rem, 1.5vw, 1.5rem);
+}
+@media screen and (max-width: 768px) {
+    nav a {
+        font-size: 0.7rem;
+        margin: 0.25rem 0;
+    }
 }

@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style/home.css">
-    <script src="script/home.js"></script>
     <title>Home</title>
 </head>
 <body>
@@ -13,75 +12,73 @@
         <a id="deposit">Deposit</a>
         <a id="transfer">Transfer</a>
         <a id="withdraw">Withdraw</a>
-        <a id="about">About</a>
         <a id="account">Account</a>
     </nav>
     <main>
         <section id="Dashboard">
-            <h2>Welcome <span id="username">guest</span></h2>
+            <h3>Welcome <span id="username">guest</span></h3>
+            Account-number: <span id="account-number">0</span> <br>
             balance: <span id="balance">0</span> <br>
-            Last Transaction: <span id="lastTransaction">none</span>
+            Last Transaction: <br><span id="lastTransaction">no transactions were made!</span>
         </section>
         <section id="Deposit">
             <h3>Deposit</h3>
             <form>
                 <div class="form-group">
-                    <label for="amount">Amount</label>
-                    <input type="number" id="amount" name="amount" required>
+                    <label for="deposit-amount">Amount</label>
+                    <input type="number" id="deposit-amount" name="deposit-amount" required>
                 </div>
-                <div class="form-group
-                    <label for="password">Password</label>
-                    <input type="password" id="password" name="password" required>
+                <div class="form-group">
+                    <label for="deposit-password">Password</label>
+                    <input type="password" id="deposit-password" name="deposit-password" required>
                 </div>
-                <button type="submit">Deposit</button>
+                <button type="submit" id="deposit-button" name="deposit-button">Deposit</button>
             </form>
         </section>
         <section id="Transfer">
             <h3>Transfer</h3>
             <form>
                 <div class="form-group">
-                    <label for="account-number">account-number</label>
-                    <input type="text" id="account-number" name="account-number" required>
-                </div>
-                <div class="form-group>
-                    <label for="amount">Amount</label>
-                    <input type="number" id="amount" name="amount" required>
+                    <label for="transfer-account-number">account-number</label>
+                    <input type="text" id="transfer-account-number" name="transfer-account-number" required>
                 </div>
                 <div class="form-group">
-                    <label for="password">Password</label>
-                    <input type="password" id="password" name="password" required>
+                    <label for="transfer-amount">Amount</label>
+                    <input type="number" id="transfer-amount" name="transfer-amount" required>
                 </div>
-                <button type="submit">Transfer</button>
+                <div class="form-group">
+                    <label for="transfer-password">Password</label>
+                    <input type="password" id="transfer-password" name="transfer-password" required>
+                </div>
+                <button type="submit" id="transfer-button" name="transfer-button">Transfer</button>
+            </form>
         </section>
         <section id="Withdraw">
             <h3>Withdraw</h3>
             <form>
-                <div class="form-group
-                    <label for="amount">Amount</label>
-                    <input type="number" id="amount" name="amount" required>
+                <div class="form-group">
+                    <label for="withdraw-amount">Amount</label>
+                    <input type="number" id="withdraw-amount" name="withdraw-amount" required>
                 </div>
-                <div class="form-group
-                    <label for="password">Password</label>
-                    <input type="password" id="password" name="password" required>
+                <div class="form-group">
+                    <label for="withdraw-password">Password</label>
+                    <input type="password" id="withdraw-password" name="withdraw-password" required>
                 </div>
-                <button type="submit">Withdraw</button>
-        </section>
-        <section id="About">
-            <h3>who are we?</h3>
-            <p>we are a bank, we steal your money and invest it so we can get rich and you will get a small intrest rate that doesn't even cover the inflation rate.(dumb***) </p>
+                <button type="submit" id="withdraw-button" name="withdraw-button">Withdraw</button>
+            </form>
         </section>
         <section id="Account">
             <h3>Your Personal Info</h3>
             <form>
-                <div class="form-group>
+                <div class="form-group">
                     <label for="first-name">First Name</label>
                     <input type="text" id="first-name" name="first-name">
                 </div>
-                <div class="form-group
+                <div class="form-group">
                     <label for="last-name">Last Name</label>
                     <input type="text" id="last-name" name="last-name">
                 </div>
-                <div class="form-group
+                <div class="form-group">
                     <label for="email">Email</label>
                     <input type="email" id="email" name="email">
                 </div>
@@ -94,16 +91,16 @@
                     <input type="address" id="address" name="address">
                 </div>
                 <div class="form-group">
-                    <input type="submit" value="Apply">
-                    <input type="reset" value="Reset">
+                    <input type="submit" name="apply" value="Apply">
                 </div>
             </form>
         </section>
     </main>
     <footer>
         <hr>
-        <p>Created by: <a href="../portfolio/index.php">Azyz</a></p>
+        <p>Created by: <a href="../portfolio/index.php" target="_blank">Azyz</a></p>
         <p>&copy; 2024</p>
     </footer>
+    <script src="script/home.js"></script>
 </body>
 </html>
