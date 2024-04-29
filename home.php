@@ -1,3 +1,7 @@
+<?php
+    session_start();
+    include "databaseconnection.php";
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,14 +18,31 @@
         <a id="transfer">Transfer</a>
         <a id="withdraw">Withdraw</a>
         <a id="account">Account</a>
-        <a name="logout">LogOut</a>
     </nav>
     <main>
+        <?php 
+            $first_name = $_SESSION['first-name'];
+            $last_name = $_SESSION['last-name'];
+            $email = $_SESSION['email'];
+            $age = $_SESSION['age'];
+            $address = $_SESSION['adress'];
+            $password = $_SESSION['password'];
+            $account_number = $_SESSION['acc-num'];
+        ?>
         <section id="Dashboard">
-            <h3>Welcome <span id="username">guest</span></h3>
-            Account-number: <span id="account-number">0</span> <br>
-            balance: <span id="balance">0</span> <br>
+            <h3>Welcome <span id="username"> <?php echo "$first_name"; ?> </span></h3>
+            Account-number: <span id="account-number"><?php echo "$account_number"; ?></span> <br>
+            balance: <span id="balance">0 TND</span> <br>
             Last Transaction: <br><span id="lastTransaction">no transactions were made!</span>
+            <form action="home.php" method="post">
+                <button type="submit" id="logout" name="logout">Logout</button>
+            </form>
+            <?php
+                if (isset($_POST['logout'])) {
+                    session_destroy();
+                    header("Location: signin.php");
+                }
+            ?>
         </section>
         <section id="Deposit">
             <h3>Deposit</h3>

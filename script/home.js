@@ -68,8 +68,12 @@ deposit_button.addEventListener('click', (event) => {
         amount_error.textContent = '*Amount must not be a negative number';
         event.preventDefault();
         return;
+    }else if(deposit_amount < 30) {
+        amount_error.textContent = '*Amount must be at least 30 TND';
+        event.preventDefault();
+        return;
     }else if(deposit_amount > 1000000) {
-        amount_error.textContent = '*Amount must not be greater than 1,000,000';
+        amount_error.textContent = '*Amount must not be greater than 1,000,000 TND';
         event.preventDefault();
         return;
     }else{
@@ -89,8 +93,12 @@ withdraw_button.addEventListener('click', (event) => {
         withdraw_error.textContent = '*Amount must not be a negative number';
         event.preventDefault();
         return;
+    }else if(withdraw_amount < 30) {
+        withdraw_error.textContent = '*Amount must be at least 30 TND';
+        event.preventDefault();
+        return;
     }else if(withdraw_amount > 1000000) {
-        withdraw_error.textContent = '*Amount must not be greater than 1,000,000';
+        withdraw_error.textContent = '*Amount must not be greater than 1,000,000 TND';
         event.preventDefault();
         return;
     }else{
@@ -124,8 +132,13 @@ transfer_button.addEventListener('click', (event) => {
         transfer_amount_error.textContent = '*Amount must not be a negative number';
         event.preventDefault();
         return;
-    }else if(transfer_amount > 1000000) {
-        transfer_amount_error.textContent = '*Amount must not be greater than 1,000,000';
+    }else if(transfer_amount < 30) {
+        transfer_amount_error.textContent = '*Amount must be at least 30 TND';
+        event.preventDefault();
+        return;
+    }
+    else if(transfer_amount > 1000000) {
+        transfer_amount_error.textContent = '*Amount must not be greater than 1,000,000 TND';
         event.preventDefault();
         return;
     }else {

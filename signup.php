@@ -1,3 +1,7 @@
+<?php
+    session_start();
+    include "databaseconnection.php";
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,7 +14,7 @@
 <body>
     <div class="container">
         <h1>Sign Up</h1>
-        <form>
+        <form action="signup.php" method="post" >
             <div class="form-group">
                 <label for="first-name">First Name:</label>
                 <input type="text" id="first-name" name="first-name" placeholder="Type in your first-name">
@@ -56,10 +60,39 @@
                 <button type="reset">Reset</button>
             </div>
             <div class="form-group">
-                <p>Already have an account? <a href="signin.html">Sign In</a></p>
+                <p>Already have an account? <a href="signin.php">Sign In</a></p>
             </div>
         </form>
     </div>
+    <?php 
+        if (isset($_POST['signup'])) {
+            $first_name = $_POST['first-name'];
+            $last_name = $_POST['last-name'];
+            $email = $_POST['email'];
+            $age = $_POST['age'];
+            $phone = $_POST['phone'];
+            $address = $_POST['address'];
+            $password = $_POST['password'];
+            $sql = "INSERT INTO users VALUES (null,'$first_name','$last_name', '$email', $age, '$phone', '$address', '$password')"; 
+            if ($conn->query($sql) === TRUE){
+            $sql = "SELECT * FROM users WHERE email='$email' AND password='$password'";
+            $result = $conn->query($sql);
+            if ($result->num_rows > 0) {
+                $row = $result->fetch_assoc();
+                $_SESSION['acc-num'] = $row['acc-num'];
+                $_SESSION['first-name'] = $row['first-name'];
+                $_SESSION['last-name'] = $row['last-name'];
+                $_SESSION['email'] = $row['email'];
+                $_SESSION['age'] = $row['age'];
+                $_SESSION['phone'] = $row['phone'];
+                $_SESSION['adress'] = $row['adress'];
+                $_SESSION['password'] = $row['password'];
+                header("Location: home.php");}
+            }else{
+                echo "<div id='php-error'><p id='php-error-message'>Error Lors l'insertion des données</p></div>";
+            }
+            }
+    ?>
     <script src="script/signup.js"></script>
 </body>
 </html>

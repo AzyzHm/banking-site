@@ -69,3 +69,15 @@ a{
     margin-bottom: 10px;
     margin-left: 1rem;
 }
+#php-error {
+    background: rgba(255, 150, 150,0.7);
+    color: red;
+    padding: 10px;
+    min-width: calc(200px * 0.5);
+    max-width: calc(500px * 0.5);
+    margin: 0 auto;
+    border-radius: 5px;
+}
+#php-error-message {
+    margin: 0;
+}
