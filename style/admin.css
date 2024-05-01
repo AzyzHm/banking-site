@@ -1,7 +1,7 @@
 :root {
     --nav: rgba(20, 20, 20, 0.3);
     --background: linear-gradient(to left,hsl(0, 0%, 0%,0.6), hsl(120, 100%, 25%, 0.8));
-    --section: rgb(255, 255, 255, 0.8);
+    --section: rgb(255, 255, 255, 0.6);
 }
 
 html {
@@ -45,7 +45,7 @@ main {
     margin-right: auto;
 }
 section {
-    max-width: 60rem;
+    max-width: 100rem;
     margin-bottom: 2rem;
     background: var(--section);
     padding: 1rem;
@@ -60,6 +60,50 @@ h3 {
 label {
     display: block;
     font-weight:lighter;
+}
+form {
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+input{
+    padding: 0.5rem;
+    margin: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 50%;
+}
+button {
+    padding: 0.5rem 1rem;
+    margin: 0.5rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background: green;
+    color: white;
+}
+#error {
+    color: red;
+    text-align: center;
+    margin: 0.5rem;
+}
+#error-php {
+    color: red;
+    text-align: center;
+    margin: 0.5rem;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: clamp(0.8rem, 1vw, 1rem);
+}
+tr, th, td {
+    padding: 0.1rem;
+    text-align: center;
+}
+#transactions,#users,#messages{
+    display: none;
 }
 /* Media Queries */
 @media screen and (max-width: 768px) {
