@@ -77,12 +77,12 @@
             <form action="home.php" method="post">
                 <div class="form-group">
                     <label for="deposit-amount">Amount</label>
-                    <input type="number" id="deposit-amount" name="deposit-amount" required>
+                    <input type="number" id="deposit-amount" name="deposit-amount" placeholder="Type in the amount you wish to deposit" required>
                     <div id="deposit-amount-error" class="error"></div>
                 </div>
                 <div class="form-group">
                     <label for="deposit-password">Password</label>
-                    <input type="password" id="deposit-password" name="deposit-password" required>
+                    <input type="password" id="deposit-password" name="deposit-password" placeholder="type in your password" required>
                 </div>
                 <button type="submit" id="deposit-button" name="deposit-button">Deposit</button>
             </form>
@@ -133,17 +133,17 @@
             <form action="home.php" method="post">
                 <div class="form-group">
                     <label for="transfer-account-number">account-number</label>
-                    <input type="text" id="transfer-account-number" name="transfer-account-number" required>
+                    <input type="text" id="transfer-account-number" name="transfer-account-number" placeholder="type in the receiver account-number" required>
                     <div id="transfer-account-number-error" class="error"></div>
                 </div>
                 <div class="form-group">
                     <label for="transfer-amount">Amount</label>
-                    <input type="number" id="transfer-amount" name="transfer-amount" required>
+                    <input type="number" id="transfer-amount" name="transfer-amount" placeholder="Type in the amount you wish to transfer" required>
                     <div id="transfer-amount-error" class="error"></div>
                 </div>
                 <div class="form-group">
                     <label for="transfer-password">Password</label>
-                    <input type="password" id="transfer-password" name="transfer-password" required>
+                    <input type="password" id="transfer-password" name="transfer-password" placeholder="type in your password" required>
                 </div>
                 <button type="submit" id="transfer-button" name="transfer-button">Transfer</button>
             </form>
@@ -214,12 +214,12 @@
             <form action="home.php" method="post">
                 <div class="form-group">
                     <label for="withdraw-amount">Amount</label>
-                    <input type="number" id="withdraw-amount" name="withdraw-amount" required>
+                    <input type="number" id="withdraw-amount" name="withdraw-amount" placeholder="Type in the amount you wish to withdraw" required>
                     <div id="withdraw-amount-error" class="error"></div>
                 </div>
                 <div class="form-group">
                     <label for="withdraw-password">Password</label>
-                    <input type="password" id="withdraw-password" name="withdraw-password" required>
+                    <input type="password" id="withdraw-password" name="withdraw-password" placeholder="type in your password" required>
                 </div>
                 <button type="submit" id="withdraw-button" name="withdraw-button">Withdraw</button>
             </form>

@@ -37,7 +37,9 @@ signUpButton.addEventListener('click', (event) => {
     const addressValue = address.value;
     const passwordValue = password.value;
     const confirmPasswordValue = confirmPassword.value;
-
+    
+    const firsNamePattern = /^[a-zA-Z ]{3,20}$/;
+    const lastNamePattern = /^[a-zA-Z ]{3,20}$/;
     const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
     const phonePattern = /^[0-9]{8}$/;
 
@@ -51,7 +53,13 @@ signUpButton.addEventListener('click', (event) => {
         firstName.focus();
         event.preventDefault();
         return;
-    }else if(firstNameValue.length > 20){
+    }else if(!firsNamePattern.test(firstNameValue)){
+        firstNameError.textContent = '*First Name must contain only letters';
+        firstName.focus();
+        event.preventDefault();
+        return;
+    }
+    else if(firstNameValue.length > 20){
         firstNameError.textContent = '*First Name must be at most 20 characters';
         firstName.focus();
         event.preventDefault();
@@ -66,7 +74,13 @@ signUpButton.addEventListener('click', (event) => {
         lastName.focus();
         event.preventDefault();
         return;
-    }else if(lastNameValue.length > 20){
+    }else if(!lastNamePattern.test(lastNameValue)){
+        lastNameError.textContent = '*Last Name must contain only letters';
+        lastName.focus();
+        event.preventDefault();
+        return;
+    }
+    else if(lastNameValue.length > 20){
         lastNameError.textContent = '*Last Name must be at most 20 characters';
         lastName.focus();
         event.preventDefault();

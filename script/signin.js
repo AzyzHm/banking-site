@@ -19,7 +19,7 @@ signInButton.addEventListener('click', (event) => {
         event.preventDefault();
         return;
     }else if(emailPattern.test(emailValue) === false){
-        emailError.textContent = '*Email must be in this format: example@domain.com';
+        emailError.textContent = '*Email must be in this format: exemple@domain.com';
         email.focus();
         event.preventDefault();
         return;

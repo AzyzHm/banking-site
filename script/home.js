@@ -166,6 +166,8 @@ account_button.addEventListener('click', (event) => {
     AgeError.textContent = '';
     addressError.textContent = '';
 
+    const first_name_pattern = /^[a-zA-Z ]{3,20}$/;
+    const last_name_pattern = /^[a-zA-Z ]{3,20}$/;
     const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
     
     if(first_name === '') {
@@ -176,7 +178,12 @@ account_button.addEventListener('click', (event) => {
         firstNameError.textContent = '*First Name must be at least 3 characters';
         event.preventDefault();
         return;
-    }else if(first_name.length > 20) {
+    }else if(!first_name.match(first_name_pattern)) {
+        firstNameError.textContent = '*First Name must contain only letters';
+        event.preventDefault();
+        return;
+    }
+    else if(first_name.length > 20) {
         firstNameError.textContent = '*First Name must be at most 20 characters';
         event.preventDefault();
         return;
@@ -188,7 +195,12 @@ account_button.addEventListener('click', (event) => {
         lastNameError.textContent = '*Last Name must be at least 3 characters';
         event.preventDefault();
         return;
-    }else if(last_name.length > 20) {
+    }else if(!last_name.match(last_name_pattern)) {
+        lastNameError.textContent = '*Last Name must contain only letters';
+        event.preventDefault();
+        return;
+    }
+    else if(last_name.length > 20) {
         lastNameError.textContent = '*Last Name must be at most 20 characters';
         event.preventDefault();
         return;
@@ -197,7 +209,7 @@ account_button.addEventListener('click', (event) => {
         event.preventDefault();
         return;
     }else if(!email.match(emailPattern)) {
-        emailError.textContent = '*Email must be like something@something.something';
+        emailError.textContent = '*Email must be like exemple@domain.com';
         event.preventDefault();
         return;
     }else if(age === '') {
@@ -239,7 +251,7 @@ form_message.addEventListener('click', (event) => {
         event.preventDefault();
         return;
     } else if(!email.match(emailPattern)) {
-        email_error.textContent = '*Email must be like something@something.something';
+        email_error.textContent = '*Email must be like exemple@domain.com';
         event.preventDefault();
         return;
     } else if (subject === '') {
